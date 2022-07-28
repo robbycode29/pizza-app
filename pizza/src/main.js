@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+import Vuex from 'vuex'
+
 import './assets/tailwind.css'
 import './index.css'
+
+import food from './store/modules/food'
 
 
 import LoginPage from './components/LoginPage.vue'
@@ -13,9 +17,19 @@ import FoodMenu from './components/client/client-components/FoodMenu.vue'
 import OrderHistory from './components/client/client-components/OrderHistory.vue'
 import ShoppingCart from './components/client/client-components/ShoppingCart.vue'
 
+import 'flowbite';
+
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+Vue.use(Vuex)
+
+
+const store = new Vuex.Store({
+  modules: {
+    food,
+  }
+})
 
 const routes = [
 
@@ -54,5 +68,6 @@ const router = new VueRouter({
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
