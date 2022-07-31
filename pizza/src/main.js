@@ -7,6 +7,7 @@ import './assets/tailwind.css'
 import './index.css'
 
 import food from './store/modules/food'
+import auth from './store/modules/auth'
 
 
 import LoginPage from './components/LoginPage.vue'
@@ -28,6 +29,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   modules: {
     food,
+    auth
   }
 })
 
