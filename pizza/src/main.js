@@ -8,6 +8,7 @@ import './index.css'
 
 import food from './store/modules/food'
 import auth from './store/modules/auth'
+import pizzas from './store/modules/pizzas'
 
 
 import LoginPage from './components/LoginPage.vue'
@@ -28,8 +29,9 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    food,
-    auth
+    food: food,
+    auth: auth,
+    pizzas: pizzas,
   }
 })
 

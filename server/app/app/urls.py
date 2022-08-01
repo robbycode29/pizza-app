@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from server import views
 from rest_framework.routers import DefaultRouter
 
@@ -27,6 +27,12 @@ from rest_framework_simplejwt.views import TokenRefreshView
 #     TokenRefreshView,
 # )
 
+router = DefaultRouter()
+router.register(r'pizzas', views.PizzaViewSet)
+router.register(r'ingredients', views.IngredientViewSet)
+router.register(r'pizzaorders', views.PizzaOrderViewSet)
+
+router.register(r'userorders', views.UserOrdersViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,4 +42,6 @@ urlpatterns = [
 
     path('login/', MyObtainTokenPairView.as_view(), name='token_obtain_pair'),
     path('login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    path('api/', include(router.urls)),
 ]
