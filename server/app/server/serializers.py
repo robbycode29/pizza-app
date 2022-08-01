@@ -12,6 +12,7 @@ class PizzaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pizza
         fields = '__all__'
+        depth = 1
 
 class IngredientSerializer(serializers.ModelSerializer):
     class Meta:

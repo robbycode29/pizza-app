@@ -1,10 +1,11 @@
 import axios from "axios";
+import base_url from "./base_url";
 
-const base_url = "https://8aaa-85-186-24-110.eu.ngrok.io/";
+const url = base_url
 
 export default {
     login: async (userData) => {
-        const response = await axios.post(base_url + "login/", {
+        const response = await axios.post(url + "login/", {
             mothod: "POST",
             headers: {
                 "Content-Type": "application/json",

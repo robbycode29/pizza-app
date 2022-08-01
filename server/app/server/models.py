@@ -4,6 +4,7 @@ class PizzaOrder(models.Model):
     """
     Model representing a pizza order.
     """
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField()

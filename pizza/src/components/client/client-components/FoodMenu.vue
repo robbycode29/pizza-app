@@ -3,7 +3,8 @@
        <SearchBar class="mt-12 w-1/2 flex flex-col items-center"/>
        <hr class="border-sky-800 w-3/4 border-1 rounded-full"/>
        <CustomPizzaGenerator class="w-1/2 flex flex-col items-center"/>
-       <FoodList/>
+       <hr class="border-sky-800 w-3/4 border-1 rounded-full"/>
+       <FoodList class="w-1/2"/>
     </div>
 </template>
 
